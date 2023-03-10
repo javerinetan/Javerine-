@@ -26,6 +26,17 @@ function Projects() {
             <CompeitionCard
               imgPath={AWS}
               isBlog={false}
+              title="Microsoft Certified: Power BI Data Analyst Associate"
+              appsused="Microsoft Test"
+              description="As someone who has completed the Power BI Data Analyst certification, I can attest that it validates one's ability to use Microsoft Power BI effectively in order to help businesses make the most of their data assets.
+              "
+            ghLink= "https://www.credly.com/badges/ba5dcb13-f615-4d6a-86c0-c218f5882b84/linked_in?t=rrasa3"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <CompeitionCard
+              imgPath={AWS}
+              isBlog={false}
               title="Build On Singapore Hackathon 2022 Amazon"
               appsused="1st Runner Up "
               description="It was an eye opening and memorable experience that will help me develop my skills i 
