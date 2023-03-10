@@ -46,5 +46,5 @@ This project was built using these technologies.
 ## Credits
 
 
-Credits to @soumyajit4419. Really apperiate
+Credits to @somyaji419. Really apperiate
 
