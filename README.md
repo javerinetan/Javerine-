@@ -1,6 +1,6 @@
 <h2 align="center">
   Portfolio Website - Javerine <br/>
-  <a href="https://javerine.vercel.app/" target="_blank">javerine.vercel</a>
+  <a href="https://javerinetanjx.vercel.app/" target="_blank">javerine.vercel</a>
 </h2>
 <div align="center">
   
