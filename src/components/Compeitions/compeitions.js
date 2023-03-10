@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import CompeitionCard from "../Compeitions/compeitionscard";
 import Particle from "../Particle";
 import allibaba from "../../Assets/Projects/Allibaba.png";
+import Microsoft from "../../Assets/Projects/MicroAA.png";
 import AWS from "../../Assets/Projects/AWS.png";
 import Govtech from "../../Assets/Projects/GeekOut2022.png";
 import DroneOdyseey from "../../Assets/Projects/DroneOdyssey.jpg";
@@ -24,7 +25,7 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <CompeitionCard
-              imgPath={AWS}
+              imgPath={Microsoft}
               isBlog={false}
               title="Microsoft Certified: Power BI Data Analyst Associate"
               appsused="Microsoft Test"
