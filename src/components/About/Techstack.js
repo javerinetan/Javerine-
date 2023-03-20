@@ -7,13 +7,16 @@ import {
   DiReact,
   DiNodejs,
   DiPython,
-  DiGit,
   DiPhp,
 } from "react-icons/di";
 import {
   SiUbuntu,
   SiMysql,
 } from "react-icons/si";
+
+import {
+  FaRProject
+} from "react-icons/fa";
 
 
 function Techstack() {
@@ -34,8 +37,8 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons" title="React" >
         <DiReact color="#61DBFB"/>
       </Col>
-      <Col xs={4} md={2} className="tech-icons" title="Git">
-        <DiGit />
+      <Col xs={4} md={2} className="tech-icons" title="R Programming">
+        <FaRProject/>
       </Col>
       <Col xs={4} md={2} className="tech-icons" title="Python">
         <DiPython />
