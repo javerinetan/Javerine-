@@ -49,7 +49,7 @@ function Projects() {
               title="Housing Price Analysis"
               appsused="PowerBi"
               description="Using PowerBI to clean data and analyse what factors influence Housing Prices in Singapore."
-              ghLink="https://github.com/javerinetan/Visual-Analytics-Project"
+              ghLink="https://github.com/javerinetan/VAP_Public-Version"
               demoLink="https://youtu.be/GwyiA7Kgutk"              
             />
           </Col>
