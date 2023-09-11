@@ -5,6 +5,7 @@ import Particle from "../Particle";
 import VAP from "../../Assets/Projects/VAP.png";
 import LeTimelessTrésor from "../../Assets/Projects/LeTimelessImage.png";
 import srm from "../../Assets/Projects/project2.png";
+import pytea from "../../Assets/pytea.png";
 
 function Projects() {
   return (
@@ -18,6 +19,17 @@ function Projects() {
           Here are a few projects I've worked on recently and received Distinction.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={pytea}
+              isBlog={false}
+              title="PyTea"
+              appsused="Flask, Python, HTML, Javascript "
+              description="The website was created using the above coding languages to help Pytea to digitalise their brand. The name is PyTea cleverly combines the word “Python” with “tea”, creating a playful yet tech-inspired name for our bubble tea shop."
+              ghLink= "https://github.com/NatelieNeo/WEBAP-Assignment/tree/main"
+              demoLink="https://youtu.be/GwyiA7Kgutk"
+            />
+          </Col>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={LeTimelessTrésor}
