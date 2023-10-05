@@ -6,7 +6,8 @@ import VAP from "../../Assets/Projects/VAP.png";
 import LeTimelessTrésor from "../../Assets/Projects/LeTimelessImage.png";
 import srm from "../../Assets/Projects/project2.png";
 import pytea from "../../Assets/pytea.png";
-import PAP from "../../Assets/PAP.png"
+import PAP from "../../Assets/PAP.png";
+import PAP_Report from "../../Assets/PAP Report.pdf"
 
 function Projects() {
   return (
@@ -28,7 +29,7 @@ function Projects() {
               appsused="Data Analytics, KNIME, PowerBI, Tableu "
               description="Predict peak energy demand for electricity in Singapore, enabling proactive environmental monitoring and effective resource management strategies.
               "
-              ghLink= "https://github.com/NatelieNeo/WEBAP-Assignment/tree/main"
+              ghLink= {PAP_Report}
             />
           </Col>
           <Col md={4} className="project-card">
@@ -42,30 +43,7 @@ function Projects() {
               demoLink="https://youtu.be/XAgLWrt9qEQ"
             />
           </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={LeTimelessTrésor}
-              isBlog={false}
-              title="Le Timeless Trésor"
-              appsused="HTML,CSS and Javascript "
-              description="A French-themed luxury hotel website, where minimalist design meets opulent comfort to create a truly unforgettable experience."
-              ghLink= "https://github.com/javerinetan/la-timeless-tresor"
-              demoLink="https://letimelesstresor.netlify.app/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={srm}
-              isBlog={false}
-              title="Is Singapore a good country to live in?"
-              appsused="Excel Sheet"
-              description="Utilize statistical research methods to investigate if Singapore is a good country to live in based on objective data. "
-              ghLink="https://github.com/javerinetan/Statistical-Research-"
-              demoLink="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:f33f5f7a-a87e-4de9-b191-f246a915af15"
-            />
-          </Col>
-
+  
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={VAP}
@@ -78,7 +56,31 @@ function Projects() {
             />
           </Col>
 
+          
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={srm}
+              isBlog={false}
+              title="Is Singapore a good country to live in?"
+              appsused="Excel Sheet"
+              description="Utilize statistical research methods to investigate if Singapore is a good country to live in based on objective data. "
+              ghLink="https://github.com/javerinetan/Statistical-Research-"
+              demoLink="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:f33f5f7a-a87e-4de9-b191-f246a915af15"
+            />
+          </Col>
 
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={LeTimelessTrésor}
+              isBlog={false}
+              title="Le Timeless Trésor"
+              appsused="HTML,CSS and Javascript "
+              description="A French-themed luxury hotel website, where minimalist design meets opulent comfort to create a truly unforgettable experience."
+              ghLink= "https://github.com/javerinetan/la-timeless-tresor"
+              demoLink="https://letimelesstresor.netlify.app/"
+            />
+          </Col>
         </Row>
       </Container>
     </Container>
