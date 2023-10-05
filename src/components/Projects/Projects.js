@@ -29,7 +29,6 @@ function Projects() {
               description="Predict peak energy demand for electricity in Singapore, enabling proactive environmental monitoring and effective resource management strategies.
               "
               ghLink= "https://github.com/NatelieNeo/WEBAP-Assignment/tree/main"
-              demoLink="https://youtu.be/XAgLWrt9qEQ"
             />
           </Col>
           <Col md={4} className="project-card">
