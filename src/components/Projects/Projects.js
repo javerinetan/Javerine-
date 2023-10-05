@@ -6,6 +6,7 @@ import VAP from "../../Assets/Projects/VAP.png";
 import LeTimelessTrésor from "../../Assets/Projects/LeTimelessImage.png";
 import srm from "../../Assets/Projects/project2.png";
 import pytea from "../../Assets/pytea.png";
+import PAP from "../../Assets/PAP.png"
 
 function Projects() {
   return (
@@ -21,9 +22,9 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={pytea}
+              imgPath={PAP}
               isBlog={false}
-              title="Energy"
+              title="Reducing Energy Consumption"
               appsused="Data Analytics, KNIME, PowerBI, Tableu "
               description="Predict peak energy demand for electricity in Singapore, enabling proactive environmental monitoring and effective resource management strategies.
               "
