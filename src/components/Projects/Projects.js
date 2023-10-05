@@ -23,6 +23,18 @@ function Projects() {
             <ProjectCard
               imgPath={pytea}
               isBlog={false}
+              title="Energy"
+              appsused="Data Analytics, KNIME, PowerBI, Tableu "
+              description="Predict peak energy demand for electricity in Singapore, enabling proactive environmental monitoring and effective resource management strategies.
+              "
+              ghLink= "https://github.com/NatelieNeo/WEBAP-Assignment/tree/main"
+              demoLink="https://youtu.be/XAgLWrt9qEQ"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={pytea}
+              isBlog={false}
               title="PyTea"
               appsused="Flask, Python, HTML, Javascript "
               description="The website was created using the above coding languages to help Pytea to digitalise their brand. The name is PyTea cleverly combines the word “Python” with “tea”, creating a playful yet tech-inspired name for our bubble tea shop."
