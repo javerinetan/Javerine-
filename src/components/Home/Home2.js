@@ -26,7 +26,7 @@ function Home2() {
               
               <br />
               <br />I am now currently the 
-              <b className="purple"> Head of Publicity Committe in the Ladies in Tech Club</b>
+              <b className="purple"> President of Ladies in Tech (LIT) Club</b>
               <br />
               <br />I love to try new things in IT and would like to use my skills in the future to help 
               <i>
