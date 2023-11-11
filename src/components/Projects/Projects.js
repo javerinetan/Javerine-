@@ -39,7 +39,7 @@ function Projects() {
               title="PyTea"
               appsused="Flask, Python, HTML, Javascript "
               description="The website was created using the above coding languages to help Pytea to digitalise their brand. The name is PyTea cleverly combines the word “Python” with “tea”, creating a playful yet tech-inspired name for our bubble tea shop."
-              ghLink= "https://github.com/NatelieNeo/WEBAP-Assignment/tree/main"
+              ghLink= "https://github.com/javerinetan/PyTea"
               demoLink="https://youtu.be/XAgLWrt9qEQ"
             />
           </Col>
