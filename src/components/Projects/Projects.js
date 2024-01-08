@@ -8,6 +8,7 @@ import srm from "../../Assets/Projects/project2.png";
 import pytea from "../../Assets/pytea.png";
 import PAP from "../../Assets/PAP.png";
 import PAP_Report from "../../Assets/PAP Report.pdf"
+import QuizIt from "../../Assets/QuizIt.png"
 
 function Projects() {
   return (
@@ -21,6 +22,17 @@ function Projects() {
           Here are a few projects I've worked on recently and received Distinction.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={QuizIt}
+              isBlog={false}
+              title="QuizIT"
+              appsused="PHP, MySQL, Database, HTML "
+              description="Developing a PHP-based website with a database to support student learning. This assignment, mandated by our Gachon University professor, aims to enhance the study experience for students."
+              ghLink= "https://github.com/javerinetan/Quiz-Website-using-database.git"
+              demoLink="https://www.youtube.com/watch?v=h3VSX_NzaEA&feature=youtu.be"
+            />
+          </Col>
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={PAP}
