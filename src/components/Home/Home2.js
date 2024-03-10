@@ -36,7 +36,7 @@ function Home2() {
               <br />
               My field of Interest's are building new &nbsp;
               <i>
-                <b className="purple">creating visuals, developing website </b> and  
+                <b className="purple">visuals, developing website </b> and  
                 <b className="purple"> challenging the limits of AI can do beyond humanity </b>
               </i>
               <br />
