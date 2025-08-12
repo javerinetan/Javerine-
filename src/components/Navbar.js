@@ -1,36 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
 import logo from "../Assets/logo.png";
-// import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-// import { CgGitFork } from "react-icons/cg";
+import { BsSun, BsMoon } from "react-icons/bs";
 
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-import{
-  FaAward,
-} from "react-icons/fa";
-
+import { FaAward, FaQuoteRight } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+  // Theme: dark/light with persistence
+  const getInitialDark = () => {
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored === "dark";
+    return window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
+  const [isDark, setIsDark] = useState(getInitialDark);
 
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-bs-theme",
+      isDark ? "dark" : "light"
+    );
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }, [isDark]);
+
+  useEffect(() => {
+    function onScroll() {
+      updateNavbar(window.scrollY >= 20);
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <Navbar
@@ -40,19 +53,19 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand as={Link} to="/" className="d-flex" onClick={() => updateExpanded(false)}>
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+          onClick={() => updateExpanded(expand ? false : "expanded")}
         >
           <span></span>
           <span></span>
           <span></span>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
@@ -77,12 +90,11 @@ function NavBar() {
                 to="/project"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
               </Nav.Link>
             </Nav.Item>
+
             <Nav.Item>
               <Nav.Link
                 as={Link}
@@ -93,26 +105,42 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
+            {/* Renamed dropdown with two items */}
+            <NavDropdown
+              id="nav-credentials"
+              align="end"
+              title={
+                <>
+                  <CgFileDocument style={{ marginBottom: "2px" }} /> Credentials
+                </>
+              }
+            >
+              <NavDropdown.Item
+                as={Link}
+                to="/testimonials"
+                onClick={() => updateExpanded(false)}
+              >
+                <FaQuoteRight style={{ marginBottom: "2px" }} /> Testimonials
+              </NavDropdown.Item>
+              <NavDropdown.Item
                 as={Link}
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Testimonial
-              </Nav.Link>
-            </Nav.Item>
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </NavDropdown.Item>
+            </NavDropdown>
 
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/javerinetan/Javerine-Portfoilio"
-                target="_blank"
-                className="fork-btn-inner"
+            {/* Theme switch */}
+            <Nav.Item className="ms-md-3 d-flex align-items-center">
+              <button
+                className="theme-toggle"
+                aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+                onClick={() => setIsDark((d) => !d)}
               >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillHeart style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item> */}
+                {isDark ? <BsSun /> : <BsMoon />}
+              </button>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -6,9 +6,9 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page } from "react-pdf";
 import "../../utils/pdfWorker"; // sets pdf.js worker once
 
-import resumePdf from "../../Assets/Javerine Tan Jing Xuan Resume 2023.pdf";
+import testimonialPdf from "../../Assets/HTX_Testimonial.pdf";
 
-export default function ResumePage() {
+export default function Testimonials() {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -23,16 +23,15 @@ export default function ResumePage() {
         <Particle />
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button variant="primary" href={resumePdf} target="_blank" style={{ maxWidth: 250 }}>
+          <Button variant="primary" href={testimonialPdf} target="_blank" style={{ maxWidth: 250 }}>
             <AiOutlineDownload />
-            &nbsp;Download Resume
+            &nbsp;Download Testimonial
           </Button>
         </Row>
 
-        {/* Preview first page (add more <Page> blocks if you want) */}
         <Row className="resume">
-          <Document file={resumePdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.2 : 0.6} />
+          <Document file={testimonialPdf} className="d-flex justify-content-center">
+            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
           </Document>
         </Row>
       </Container>

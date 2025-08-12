@@ -1,20 +1,29 @@
 html {
-  --section-background-color: linear-gradient(/**background color**/
+  --body-bg: #0e0b16;                  /* page background */
+  --text-color: #ffffff;               /* main text */
+  --muted-text: #a7a7b0;               /* secondary text */
+  --navbar-bg: rgba(27, 26, 46, 0.66); /* sticky navbar glass */
+  --surface-bg: rgba(255,255,255,0.04);/* cards/panels on dark */
+  --border-color: rgba(255,255,255,0.12);
+
+  /* you already have these accent tokens */
+  --imp-text-color: #978deb;
+  --skill: #6aede9;
+  --published: #f193b9;
+
+  /* section overlays/images (dark) */
+  --section-background-color: linear-gradient(
     to bottom left,
     rgba(17, 16, 16, 0.582),
     rgba(12, 8, 24, 0.904)
   );
-
-  --image-gradient: linear-gradient(/**background color**/
+  --image-gradient: linear-gradient(
     to bottom left,
     rgba(17, 16, 16, 0.678),
     rgba(12, 10, 22, 0.863)
   );
-
-  --imp-text-color: #978deb; /*this is the color of text highlighted*/
-  --skill: #6aede9; /*this is the color of text highlighted*/
-  --published: #f193b9; /*this is the color of text highlighted*/
 }
+
 
 .purple {
   color: var(--imp-text-color) !important;
@@ -751,3 +760,43 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+.theme-toggle {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem; /* icon size */
+  line-height: 1;
+  color: var(--theme-toggle-fg, #ffd43b);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--imp-text-color);
+  outline-offset: 2px;
+}
+
+/* Icon color/background by theme */
+[data-bs-theme="dark"] .theme-toggle {
+  --theme-toggle-fg: #ffd43b;              
+  background: rgba(255, 255, 255, 0.06);
+}
+
+[data-bs-theme="light"] .theme-toggle {
+  --theme-toggle-fg: #5a3fc0;              /* your purple family */
+  background: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 767px) {
+  .theme-toggle { margin-top: 0.25rem; }
+}
+
