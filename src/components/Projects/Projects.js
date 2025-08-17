@@ -23,17 +23,17 @@ function Projects() {
           Here are a few projects I've worked on recently and received Distinction.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={BDMP}
               isBlog={false}
               title="Multiplayer Games Analysis"
               appsused="Python, Jupyter Notebook, Google Cloud Storage, Databricks  "
               description="Big Data Pipeline to perform analysis on multiplayer games. Collected data from Reddit to understand the gaming community's preferences and trends."
-              ghLink= "https://github.com/javerinetan/Quiz-Website-using-database.git"
+              // ghLink= ""
               // demoLink="https://www.youtube.com/watch?v=h3VSX_NzaEA&feature=youtu.be"
             />
-          </Col>
+          </Col> */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={QuizIt}
