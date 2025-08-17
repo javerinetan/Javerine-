@@ -16,7 +16,7 @@ function AboutCard() {
           </p>
           <ul>
             <li className="about-activity">
-              <AiOutlineHeart /> Cooking Food
+              <AiOutlineHeart /> Cooking
             </li>
             <li className="about-activity">
               <AiOutlineHeart /> Ice Skating

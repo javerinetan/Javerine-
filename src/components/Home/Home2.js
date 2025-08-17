@@ -22,18 +22,15 @@ function Home2() {
               My interest in IT started when I was in Secondary school . 
               I was part of the <i><b className="purple">Robotics and Automation Club. </b></i> 
               From there I learned how to code 
-              <b className="purple"> drones, robots, artifical intellegence and more..</b>
-              
-              <br />
-              <br />I am now currently the 
-              <b className="purple"> President of Ladies in Tech (LIT) Club</b>
-              <br />
-              <br />I love to try new things in IT and would like to use my skills in the future to help 
+              <b className="purple"> drones, robots, artifical intellegence and more. </b>
+              I love to try new things in IT and would like to use my skills in the future to help 
               <i>
                 <b className="purple"> the less fortunate people. </b>
               </i>
+              
               <br />
-              <br />
+              <br />I am now currently a  
+              <b className="purple"> Software Engineering Freshmen at Singapore Management University (SMU). </b>    
               My field of Interest's are building new &nbsp;
               <i>
                 <b className="purple">visuals, developing website </b> and  

@@ -21,4 +21,17 @@
   <div id="root"></div>
 </body>
 
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t) {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-bs-theme', t);
+  } catch(e) {}
+})();
+</script>
+<meta name="theme-color" content="#0e0b16">
+
 </html>
