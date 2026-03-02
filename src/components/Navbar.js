@@ -20,12 +20,11 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  // Theme: dark/light with persistence
+  // Theme: default is LIGHT unless user has previously saved a preference
   const getInitialDark = () => {
     const stored = localStorage.getItem("theme");
     if (stored) return stored === "dark";
-    return window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return false; // default to light mode
   };
   const [isDark, setIsDark] = useState(getInitialDark);
 

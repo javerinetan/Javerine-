@@ -6,43 +6,61 @@ import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/me.png";
 import Toolstack from "./Toolstack";
 
-
 function About() {
   return (
     <Container fluid className="about-section">
       <Particle />
       <Container>
+        {/* Bio row */}
         <Row style={{ justifyContent: "center", padding: "10px" }}>
           <Col
             md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
+            style={{ justifyContent: "center", paddingTop: "30px", paddingBottom: "50px" }}
           >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Who am <strong className="purple">I </strong>?
+            <h1 style={{ fontSize: "2.2em", paddingBottom: "12px", fontWeight: 700 }}>
+              Who am <strong className="purple">I</strong>?
             </h1>
+            <div className="section-divider" style={{ margin: "0 0 1.5rem" }} />
             <Aboutcard />
           </Col>
           <Col
             md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
+            style={{ paddingTop: "110px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" width="50%"/>
+            <img
+              src={laptopImg}
+              alt="Javerine"
+              className="img-fluid"
+              style={{
+                maxWidth: "60%",
+                borderRadius: "20px",
+                boxShadow: "0 12px 40px rgba(99,54,134,0.25)",
+                display: "block",
+                margin: "0 auto",
+              }}
+            />
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple"> Skillsets </strong>
-        </h1>
 
+        {/* Programming Languages */}
+        <h1 className="project-heading" style={{ textAlign: "center" }}>
+          Programming <strong className="purple">Languages</strong>
+        </h1>
+        <div className="section-divider" />
+        <p className="project-sub" style={{ textAlign: "center" }}>
+          Languages I code in on a regular basis
+        </p>
         <Techstack />
 
-        <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
+        {/* Tools */}
+        <h1 className="project-heading" style={{ textAlign: "center" }}>
+          <strong className="purple">Tools</strong> &amp; Software
         </h1>
+        <div className="section-divider" />
+        <p className="project-sub" style={{ textAlign: "center" }}>
+          My everyday dev &amp; analytics toolkit
+        </p>
         <Toolstack />
       </Container>
     </Container>
