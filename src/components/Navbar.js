@@ -10,7 +10,6 @@ import { BsSun, BsMoon } from "react-icons/bs";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
-  AiOutlineUser,
 } from "react-icons/ai";
 import { FaAward, FaQuoteRight } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
@@ -72,15 +71,6 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
 
             <Nav.Item>
               <Nav.Link

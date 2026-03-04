@@ -1,27 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import { AiOutlineDownload, AiOutlineFilePdf } from "react-icons/ai";
-import { Document, Page } from "react-pdf";
-import "../../utils/pdfWorker";
+import { AiOutlineDownload } from "react-icons/ai";
 
 import resumePdf from "../../Assets/Javerine Tan Jing Xuan Resume.pdf";
 
 export default function ResumePage() {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const onResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Container>
+        <Container style={{ position: "relative", zIndex: 1 }}>
           {/* Header */}
           <Row style={{ justifyContent: "center", marginBottom: "2rem" }}>
             <Col md={8} style={{ textAlign: "center" }}>
@@ -35,6 +25,7 @@ export default function ResumePage() {
               <Button
                 variant="primary"
                 href={resumePdf}
+                download="Javerine_Resume.pdf"
                 target="_blank"
                 style={{ gap: "8px", display: "inline-flex", alignItems: "center" }}
               >
@@ -44,42 +35,42 @@ export default function ResumePage() {
             </Col>
           </Row>
 
-          {/* PDF preview */}
-          <Row className="resume">
-            <div
-              style={{
-                background: "var(--surface-bg)",
-                border: "1px solid var(--border-color)",
-                borderRadius: "16px",
-                padding: "20px",
-                boxShadow: "var(--card-shadow)",
-                display: "flex",
-                justifyContent: "center",
-                overflow: "hidden",
-              }}
-            >
-              <Document file={resumePdf} className="d-flex justify-content-center">
-                <Page
-                  pageNumber={1}
-                  scale={width > 786 ? 1.2 : 0.6}
-                  renderAnnotationLayer={false}
-                  renderTextLayer={false}
+          {/* PDF iframe preview */}
+          <Row className="resume" style={{ justifyContent: "center" }}>
+            <Col md={10}>
+              <div
+                style={{
+                  background: "var(--surface-bg)",
+                  border: "1px solid var(--border-color)",
+                  borderRadius: "16px",
+                  padding: "16px",
+                  boxShadow: "var(--card-shadow)",
+                  overflow: "hidden",
+                }}
+              >
+                <iframe
+                  src={resumePdf}
+                  title="Javerine Resume"
+                  style={{
+                    width: "100%",
+                    height: "900px",
+                    border: "none",
+                    borderRadius: "8px",
+                    display: "block",
+                  }}
                 />
-              </Document>
-            </div>
-          </Row>
-
-          {/* Download again at bottom */}
-          <Row style={{ justifyContent: "center", marginTop: "2rem" }}>
-            <Button
-              variant="primary"
-              href={resumePdf}
-              target="_blank"
-              style={{ maxWidth: 260, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
-            >
-              <AiOutlineFilePdf style={{ fontSize: "1.2em" }} />
-              &nbsp;Open Full PDF
-            </Button>
+              </div>
+              <p
+                style={{
+                  textAlign: "center",
+                  marginTop: "0.75rem",
+                  color: "var(--muted-text)",
+                  fontSize: "0.85em",
+                }}
+              >
+                If the PDF doesn't display, use the Download button above to view it.
+              </p>
+            </Col>
           </Row>
         </Container>
       </Container>
