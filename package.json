@@ -29,11 +29,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -55,9 +55,10 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
     "eslint": "^8.32.0"
   },
-  "description": "<h2 align=\"center\">\r   Portfolio Website - v2.0<br/>\r   <a href=\"http://soumya-jit.tech/\" target=\"_blank\">soumyajit.tech</a>\r </h2>\r <div align=\"center\">\r   <img alt=\"Demo\" src=\"./Images/readme-img1.png\" />\r </div>",
+  "description": "<h2 align=\"center\">\r   Portfolio Website - v2.0<br/>\r   <a href=\"http://soumya-jit.tech/\" target=\"_blank\">soumyajit.tech</a> \r </h2>\r <div align=\"center\">\r   <img alt=\"Demo\" src=\"./Images/readme-img1.png\" /> \r </div>",
   "main": "index.js",
   "repository": {
     "type": "git",
