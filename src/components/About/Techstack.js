@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import {
   DiHtml5, DiCss3, DiJavascript1, DiReact, DiNodejs, DiPython, DiPhp,
 } from "react-icons/di";
-import { SiUbuntu, SiMysql, SiFlask, SiTableau, SiKnime } from "react-icons/si";
+import { SiUbuntu, SiMysql, SiFlask } from "react-icons/si";
 import { FaRProject } from "react-icons/fa";
 
 const skills = [
