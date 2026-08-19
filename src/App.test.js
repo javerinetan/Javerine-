@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('./components/Particle', () => () => null);
+jest.mock('./components/ScrollToTop', () => () => null);
+
+test('renders the portfolio hero and primary call to action', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 2, name: /javerine tan/i })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /view my work/i })).toHaveAttribute('href', '/project');
 });

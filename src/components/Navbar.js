@@ -3,9 +3,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { BsSun, BsMoon } from "react-icons/bs";
+import { applyTheme, preferredTheme } from "../theme";
 
 import {
   AiOutlineHome,
@@ -18,20 +18,10 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  // Theme: default is LIGHT unless user has previously saved a preference
-  const getInitialDark = () => {
-    const stored = localStorage.getItem("theme");
-    if (stored) return stored === "dark";
-    return false; // default to light mode
-  };
-  const [isDark, setIsDark] = useState(getInitialDark);
+  const [isDark, setIsDark] = useState(() => preferredTheme() === "dark");
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-bs-theme",
-      isDark ? "dark" : "light"
-    );
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    applyTheme(isDark ? "dark" : "light");
   }, [isDark]);
 
   useEffect(() => {
@@ -51,7 +41,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex" onClick={() => updateExpanded(false)}>
-          <img src={logo} className="img-fluid logo" alt="brand" />
+          <span className="brand-mark" aria-label="Javerine Tan home">JAE</span>
         </Navbar.Brand>
 
         <Navbar.Toggle
@@ -122,6 +112,7 @@ function NavBar() {
             {/* Theme switch */}
             <Nav.Item className="ms-md-3 d-flex align-items-center">
               <button
+                type="button"
                 className="theme-toggle"
                 aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
                 onClick={() => setIsDark((d) => !d)}
