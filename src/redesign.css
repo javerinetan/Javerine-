@@ -748,3 +748,22 @@ html[data-bs-theme="light"] .hero {
 .case-carousel-dots button { width: 0.65rem; height: 0.65rem; padding: 0; border-radius: 50%; border: 0; background: rgba(127,127,127,0.45); cursor: pointer; }
 .case-carousel-dots button.active { background: var(--btn-bg); transform: scale(1.25); }
 .case-carousel-dots button:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+
+/* Videos and phone screenshot strip */
+.case-videos { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; margin-top: 1rem; }
+.case-video { margin: 0; }
+.case-video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; }
+.case-video-tall .case-video-frame { aspect-ratio: 9 / 16; max-height: 520px; margin: 0 auto; }
+.case-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.case-video figcaption { display: grid; gap: 0.15rem; margin-top: 0.6rem; text-align: left; }
+.case-video figcaption span { color: var(--muted-text); font-size: 0.9rem; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.phone-strip { display: flex; gap: 1rem; overflow-x: auto; padding: 0.75rem 0.25rem 1rem; margin-top: 1rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.phone-strip:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+.phone-shot { flex: 0 0 240px; margin: 0; scroll-snap-align: start; }
+.phone-shot img { width: 100%; display: block; border-radius: 22px; border: 1px solid rgba(127,127,127,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+.phone-shot figcaption { display: grid; gap: 0.2rem; margin-top: 0.7rem; text-align: left; }
+.phone-shot figcaption span { color: var(--muted-text); font-size: 0.85rem; line-height: 1.5; }
+@media (max-width: 767px) { .case-videos { grid-template-columns: 1fr; } .phone-shot { flex-basis: 70%; } }
+
+.case-actions { margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }

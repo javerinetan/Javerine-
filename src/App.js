@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
 import GameAnalytics from "./components/Projects/GameAnalytics";
 import AssessmentChecker from "./components/Projects/AssessmentChecker";
+import KakiGo from "./components/Projects/KakiGo";
 import Footer from "./components/Footer";
 import Credentials from "./components/Resume/Credentials";
 import Compeitions from "./components/Compeitions/compeitions";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/project/game-analytics" element={<GameAnalytics />} />
           <Route path="/project/assessment-checker" element={<AssessmentChecker />} />
+          <Route path="/project/kakigo" element={<KakiGo />} />
           <Route path="/compeitions" element={<Compeitions />} />
           <Route path="/credentials" element={<Credentials />} />
           {/* Old links keep working */}

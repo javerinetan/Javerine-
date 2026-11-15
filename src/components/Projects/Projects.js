@@ -11,6 +11,7 @@ import PAP_Report from "../../Assets/PAP Report.pdf";
 import QuizIt from "../../Assets/QuizIt.png";
 import BDMP from "../../Assets/Projects/BDMP.png";
 import ACDashboard from "../../Assets/Projects/AC_dashboard.jpg";
+import KakiAd from "../../Assets/Projects/Kaki_ad.png";
 
 function Projects() {
   return (
@@ -26,6 +27,17 @@ function Projects() {
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={KakiAd}
+              isBlog={false}
+              title="KakiGo"
+              appsused="Vue, Node.js, MongoDB, Socket.IO, Maps"
+              description="A mobile-first web app that helps friends in Singapore go from 'let's hang out' to a plan: when to meet, where to meet, where to eat and where to go, with live chat on the day. Pitched with a skit and an ad, and planned for the app store."
+              ghLink="/project/kakigo"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={ACDashboard}
