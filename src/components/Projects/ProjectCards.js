@@ -3,8 +3,10 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { FiArrowRight } from "react-icons/fi";
 
 function ProjectCards(props) {
+  const isInternal = typeof props.ghLink === "string" && props.ghLink.startsWith("/");
   const techTags = props.appsused
     ? props.appsused.split(",").map((t) => t.trim()).filter(Boolean)
     : [];
@@ -60,7 +62,7 @@ function ProjectCards(props) {
 
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "auto" }}>
           <Button variant="primary" href={props.ghLink} target="_blank">
-            <BsGithub /> &nbsp;
+            {isInternal ? <FiArrowRight /> : <BsGithub />} &nbsp;
             {props.isBlog ? "Blog" : "Project Details"}
           </Button>
           {!props.isBlog && props.demoLink && (

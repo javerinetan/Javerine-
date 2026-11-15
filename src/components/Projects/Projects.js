@@ -9,6 +9,8 @@ import pytea from "../../Assets/pytea.png";
 import PAP from "../../Assets/PAP.png";
 import PAP_Report from "../../Assets/PAP Report.pdf";
 import QuizIt from "../../Assets/QuizIt.png";
+import BDMP from "../../Assets/Projects/BDMP.png";
+import ACDashboard from "../../Assets/Projects/AC_dashboard.jpg";
 
 function Projects() {
   return (
@@ -24,6 +26,28 @@ function Projects() {
         </p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={ACDashboard}
+              isBlog={false}
+              title="Assessment Checker"
+              appsused="Java, OOP, SQLite, Web Dashboard"
+              description="A team-built Java system that grades a whole class's programming submissions in one go: it unzips, repairs and runs student code safely, scores every test case, and shows teachers and students the results on a dashboard. I planned the workflow and built the ingest and identity stages."
+              ghLink="/project/assessment-checker"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={BDMP}
+              isBlog={false}
+              title="Game Community Analytics"
+              appsused="Python, NLP, Topic Modelling, Web Scraping, Databricks"
+              description="A big-data project on what gamers think of League of Legends, Valorant and Dota 2. I built the automated Reddit scraping and cleaning pipeline, topic and sentiment models, and a live-updating dashboard, and worked on a champion-matchup dashboard with a teammate."
+              ghLink="/project/game-analytics"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={QuizIt}

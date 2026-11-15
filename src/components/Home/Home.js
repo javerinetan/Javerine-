@@ -1,101 +1,108 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import homeLogo from "../../Assets/hero-workspace-v2.png";
+import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FiMapPin, FiArrowRight } from "react-icons/fi";
+import { MdOutlineRestaurant } from "react-icons/md";
+import { HiOutlineSparkles } from "react-icons/hi";
+import portrait from "../../Assets/avatar2.png";
 import Particle from "../Particle";
-import Home2 from "./Home2";
-import Type from "./Type";
-import Aboutcard from "../About/AboutCard";
-import Techstack from "../About/Techstack";
-import Toolstack from "../About/Toolstack";
+import RotatingWords from "./RotatingWords";
+import AboutMe from "../About/AboutMe";
+import Skills from "../About/Skills";
+
+const socials = [
+  { href: "https://github.com/javerinetan", icon: <AiFillGithub />, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/javerine-tan-a79231242", icon: <FaLinkedinIn />, label: "LinkedIn" },
+  { href: "mailto:javerinetan05@gmail.com", icon: <AiOutlineMail />, label: "Email" },
+];
 
 function Home() {
   return (
     <section>
       {/* ── Hero ── */}
-      <Container fluid className="home-section" id="home">
+      <div className="hero" id="home">
         <Particle />
-        <Container className="home-content">
-          <Row className="hero-row align-items-center">
-            <Col lg={7} className="home-header">
-              <p className="hero-eyebrow">Software engineering · AI · Analytics</p>
-              <h1 className="heading">
-                Hi, I’m{" "}
-                <span className="wave" role="img" aria-label="waving hand">
-                  👋🏻
-                </span>
-              </h1>
+        <Container className="hero-inner">
+          <div className="hero-copy">
+            <h1 className="hero-title enter" style={{ "--i": 1 }}>
+              Hi, I’m <span className="hero-name">Javerine Tan</span>
+              <span className="hero-nickname" aria-label="but you can call me Jae">
+                but call me Jae
+              </span>
+            </h1>
 
-              <h2 className="heading-name">
-                <strong className="main-name">Javerine Tan</strong>
-              </h2>
+            <p className="hero-lede enter" style={{ "--i": 2 }}>
+              I build{" "}
+              <RotatingWords
+                words={[
+                  "full-stack web apps",
+                  "data dashboards",
+                  "AI experiments",
+                  "communities for youths",
+                ]}
+              />
+            </p>
 
-              <div className="hero-role" aria-label="Professional roles">
-                <Type />
+            <p className="hero-summary enter" style={{ "--i": 3 }}>
+              I build thoughtful digital products and turn complex ideas into
+              clear, useful experiences.
+            </p>
+
+            <div className="hero-actions enter" style={{ "--i": 4 }}>
+              <Link className="btn-pill btn-pill-primary" to="/project">
+                View my work <FiArrowRight aria-hidden="true" />
+              </Link>
+              <Link className="btn-pill btn-pill-ghost" to="/credentials">
+                Résumé &amp; testimonials
+              </Link>
+            </div>
+
+            <ul className="hero-socials enter" style={{ "--i": 5 }}>
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label}>
+                    {s.icon}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="hero-visual enter" style={{ "--i": 2 }}>
+            <div className="portrait">
+              <div className="portrait-ring" aria-hidden="true" />
+              <img src={portrait} alt="Portrait of Javerine Tan" className="portrait-img" />
+
+              <span className="portrait-note" aria-hidden="true">
+                that’s me!
+                <svg viewBox="0 0 60 40" className="portrait-arrow">
+                  <path d="M4 6 C 24 4, 44 12, 52 32" />
+                  <path d="M42 28 L 52 33 L 55 22" />
+                </svg>
+              </span>
+
+              <div className="sticker sticker-a">
+                <FiMapPin aria-hidden="true" /> Based in Singapore
               </div>
-
-              <p className="hero-summary">
-                I build thoughtful digital products and turn complex ideas into
-                clear, useful experiences.
-              </p>
-
-              <div className="hero-actions">
-                <Link className="hero-button hero-button-primary" to="/project">
-                  View my work
-                </Link>
-                <Link className="hero-button hero-button-secondary" to="/resume">
-                  View résumé
-                </Link>
+              <div className="sticker sticker-b">
+                <HiOutlineSparkles aria-hidden="true" /> President, YouthTechSG @ SMU
               </div>
-            </Col>
-
-            <Col lg={5} className="hero-art-col">
-              <div className="hero-art-shell">
-                <img src={homeLogo} alt="Laptop surrounded by code, data, and AI visuals" className="hero-art" />
+              <div className="sticker sticker-c">
+                <MdOutlineRestaurant aria-hidden="true" /> Experimental home cook
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </Container>
-      </Container>
 
-      {/* ── Intro / Social links ── */}
-      <Home2 />
+        <a href="#about" className="scroll-cue" aria-label="Scroll to About me">
+          <span />
+        </a>
+      </div>
 
-      {/* ── About / Who am I ── */}
-      <Container fluid className="about-section" id="about" style={{ paddingTop: "80px", paddingBottom: "50px" }}>
-        <Container>
-          {/* Bio card — full width, no sidebar image */}
-          <Row style={{ justifyContent: "center", padding: "10px" }}>
-            <Col md={8} style={{ paddingTop: "30px", paddingBottom: "40px" }}>
-              <h1 style={{ fontSize: "2.2em", paddingBottom: "12px", fontWeight: 700, textAlign: "center" }}>
-                Who am <strong className="purple">I</strong>?
-              </h1>
-              <div className="section-divider" style={{ margin: "0 auto 1.5rem" }} />
-              <Aboutcard />
-            </Col>
-          </Row>
-
-          {/* Programming Languages */}
-          <h1 className="project-heading" style={{ textAlign: "center" }}>
-            Programming <strong className="purple">Languages</strong>
-          </h1>
-          <div className="section-divider" />
-          <p className="project-sub" style={{ textAlign: "center" }}>
-            Languages I code in on a regular basis
-          </p>
-          <Techstack />
-
-          {/* Tools */}
-          <h1 className="project-heading" style={{ textAlign: "center" }}>
-            <strong className="purple">Tools</strong> &amp; Software
-          </h1>
-          <div className="section-divider" />
-          <p className="project-sub" style={{ textAlign: "center" }}>
-            My everyday dev &amp; analytics toolkit
-          </p>
-          <Toolstack />
-        </Container>
-      </Container>
+      <AboutMe />
+      <Skills />
     </section>
   );
 }

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BsSun, BsMoon } from "react-icons/bs";
 import { applyTheme, preferredTheme } from "../theme";
 
@@ -11,7 +10,7 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
-import { FaAward, FaQuoteRight } from "react-icons/fa";
+import { FaAward } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
@@ -56,7 +55,7 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={NavLink} to="/" end onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
@@ -64,7 +63,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
+                as={NavLink}
                 to="/project"
                 onClick={() => updateExpanded(false)}
               >
@@ -75,7 +74,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
+                as={NavLink}
                 to="/compeitions"
                 onClick={() => updateExpanded(false)}
               >
@@ -83,31 +82,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* Renamed dropdown with two items */}
-            <NavDropdown
-              id="nav-credentials"
-              align="end"
-              title={
-                <>
-                  <CgFileDocument style={{ marginBottom: "2px" }} /> Credentials
-                </>
-              }
-            >
-              <NavDropdown.Item
-                as={Link}
-                to="/testimonials"
+            <Nav.Item>
+              <Nav.Link
+                as={NavLink}
+                to="/credentials"
                 onClick={() => updateExpanded(false)}
               >
-                <FaQuoteRight style={{ marginBottom: "2px" }} /> Testimonials
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </NavDropdown.Item>
-            </NavDropdown>
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Credentials
+              </Nav.Link>
+            </Nav.Item>
 
             {/* Theme switch */}
             <Nav.Item className="ms-md-3 d-flex align-items-center">

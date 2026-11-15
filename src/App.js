@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import Projects from "./components/Projects/Projects";
+import GameAnalytics from "./components/Projects/GameAnalytics";
+import AssessmentChecker from "./components/Projects/AssessmentChecker";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
-import Compeitions from "./components/Compeitions/compeitions"
+import Credentials from "./components/Resume/Credentials";
+import Compeitions from "./components/Compeitions/compeitions";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,32 +17,25 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Testimonials from "./components/Resume/Testimonals";
+import "./redesign.css";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      upadateLoad(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
+      <div className="App" id="scroll">
         <Navbar />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<Navigate to="/" />} />
           <Route path="/project" element={<Projects />} />
+          <Route path="/project/game-analytics" element={<GameAnalytics />} />
+          <Route path="/project/assessment-checker" element={<AssessmentChecker />} />
           <Route path="/compeitions" element={<Compeitions />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/credentials" element={<Credentials />} />
+          {/* Old links keep working */}
+          <Route path="/resume" element={<Navigate to="/credentials" replace />} />
+          <Route path="/testimonials" element={<Navigate to="/credentials?tab=testimonials" replace />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
